@@ -1,0 +1,13 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: 7-demo-helm-release-oci-bb-app
+  namespace: 7-demo
+spec:
+  chartRef:
+    kind: OCIRepository
+    name: bb-mine
+    namespace: block-buster-helm-app
+  interval: 1m0s
+  targetNamespace: 7-demo
